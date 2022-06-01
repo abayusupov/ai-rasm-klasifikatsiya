@@ -2,8 +2,10 @@ import streamlit as st
 from fastai.vision.all import *
 
 import pathlib
-temp = pathlib.PosixPath
+plt = platform.system()
 pathlib.PosixPath = pathlib.WindowsPath
+if plt=='Linux':
+    pathlib.WindowsPath=pathlib.PosixPath
 
 st.title("Qurol va telefonni ajratuvchi model")
 
